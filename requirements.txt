@@ -4,4 +4,5 @@ sklearn
 pymongo[srv] == 4.2.0
 logger
 from_root
+
 -e .
