@@ -5,6 +5,8 @@ import os
 
 
 if __name__ == "__main__":
-    client = connection.connection_client(db_name)
+    conn = connection.connection_client()
+    print("databases are as 123 : " ,conn.client[db_name])
+    print("databases are as 456: " ,conn)
     
     

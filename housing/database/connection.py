@@ -5,15 +5,18 @@ import pymongo
 
 class connection_client:
 
-    def __init__(self,db_name) :
-        self.db_name = db_name
+    def __init__(self,database_name=db_name) :
+        self.database_name = db_name
         self.url= db_url
 
         try:
-            client = pymongo.MongoClient(self.url)
-            db = client.test
-            print('connection status : ',db)
-            client.close()
-            #return db
+            self.client = pymongo.MongoClient(self.url)
+            self.db = self.client.test
+            #print('connection status : ',db)
+            #db = client[database_name]
+            print(self.db)
+            #print("Collections are : ",db.list_database_names())
+            
+            self.client.close()
         except Exception as e:
-            return e
+            raise e
